@@ -1,0 +1,24 @@
+a,
+a:active {
+    font-family: arial;
+    text-decoration: none;
+    color: #585858;
+}
+
+a:hover,
+a:focus {
+    font-family: arial;
+    text-decoration: underline;
+    color: #323232;
+}
+
+body {
+    font-size: 25px;
+    background-color: #e8e8e8;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: arial;
+    font-weight: 900;
+}
