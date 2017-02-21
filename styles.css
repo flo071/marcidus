@@ -1,12 +1,10 @@
-a,
-a:active {
+a, a:active {
     font-family: arial;
     text-decoration: none;
     color: #585858;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
     font-family: arial;
     text-decoration: underline;
     color: #323232;
