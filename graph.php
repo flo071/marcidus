@@ -39,7 +39,9 @@
 </head>
 
 <body onload="displayLineChart();">
+  <center>
     <div class="box">
         <canvas id="lineChart" height="450" width="800"></canvas>
     </div>
+  </center>
 </body>
