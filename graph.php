@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <title>Graphs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
