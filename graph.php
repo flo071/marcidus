@@ -21,7 +21,7 @@
                     },
                     {
                         label: "Outside",
-                        fillColor: "rgba(124,220,220,0.2)",
+                        fillColor: "rgba(124,124,220,0.2)",
                         strokeColor: "rgba(124,124,220,1)",
                         pointColor: "rgba(124,124,220,1)",
                         pointStrokeColor: "#fff",
