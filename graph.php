@@ -43,7 +43,7 @@
     <div class="box">
         <canvas id="lineChart" height="450" width="800"></canvas></div>
     <div class="legend">
-        <p style="background-color: #7ddddd">Outside</p>
-        <p style="background-color: #7d7ddd">Inside</p></div>
+        <p style="color: #7ddddd">Inside</p>
+        <p style="color: #7d7ddd">Outside</p></div>
   </center>
 </body>
