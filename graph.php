@@ -41,6 +41,7 @@
 </head>
 
 <body onload="displayLineChart();">
+    <a href="index.html"><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"> < </button></a><br><br>
     <center>
         <div class="box">
             <canvas id="lineChart" height="450" width="800"></canvas></div>
