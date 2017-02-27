@@ -2,7 +2,8 @@
 
 <head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="material.css">
+    <script defer src="material.js"></script>
     <title>Graphs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="Chart.js"></script>
