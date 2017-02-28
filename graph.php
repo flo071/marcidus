@@ -50,52 +50,37 @@
             <p style="color: #7d7ddd">Outside</p>
         </div>
         <div class="list">
-            <table summary="Luftfeuchtigkeit" cellpadding="1" cellspacing="10">
-                <thead>
-                    <tr>
-                        <th class="d">Day</th>
-                        <th class="i">Inside</th>
-                        <th class="o">Outside</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="d">1</td>
-                        <td class="i">17</td>
-                        <td class="o">100</td>
-                    </tr>
-                    <tr>
-                        <td class="d">2</td>
-                        <td class="i">23</td>
-                        <td class="o">5</td>
-                    </tr>
-                    <tr>
-                        <td class="d">3</td>
-                        <td class="i">75</td>
-                        <td class="o">65</td>
-                    </tr>
-                    <tr>
-                        <td class="d">4</td>
-                        <td class="i">32</td>
-                        <td class="o">32</td>
-                    </tr>
-                    <tr>
-                        <td class="d">5</td>
-                        <td class="i">65</td>
-                        <td class="o">75</td>
-                    </tr>
-                    <tr>
-                        <td class="d">6</td>
-                        <td class="i">5</td>
-                        <td class="o">23</td>
-                    </tr>
-                    <tr>
-                        <td class="d">7</td>
-                        <td class="i">100</td>
-                        <td class="o">17</td>
-                    </tr>
-                </tbody>
-            </table>
+          <table border="1">
+            <tr>
+              <td>Standort</td>
+              <td>Sensor ID</td>
+              <td>Inside</td>
+              <td>Outside</td>
+              <td>Einheit</td>
+            </tr>
+            <?php
+              $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
+              $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert_i, md_messwert_o
+FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
+WHERE md_sen_id_fk = sen_id
+AND sta_id = sen_sta_id_fk
+AND mk_id = md_mk_id_fk";
+              $result = mysqli_query($link,$sql);
+
+              while($row=mysqli_fetch_array($result))
+          		{
+                echo "<tr>";
+                echo "<td>".$row["sta_name"]."</td>";
+                echo "<td>".$row["sen_id"]."</td>";
+                  echo "<td>".$row["md_messwert_i"]."</td>";
+                //echo "<br>";
+                echo "<td>".$row["md_messwert_o"]."</td>";
+                echo "<td>".$row["mk_einheit"]."</td>";
+                //echo "<br>";
+                echo "</tr>";
+          		}
+            ?>
+          </table>
         </div>
     </center>
 </body>
