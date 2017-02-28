@@ -1,29 +1,64 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="material.css">
-    <script defer src="material.js"></script>
-    <title>Marcidus</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<div class="mdl-layout-spacer"></div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+          <i class="material-icons">search</i>
+        </label>
+					<div class="mdl-textfield__expandable-holder">
+						<input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">Marcidus</span>
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="hardware.html">Hardware</a>
+				<a class="mdl-navigation__link" href="graph.php">Graph</a>
+				<a class="mdl-navigation__link" href="create.html">Creators</a>
+			</nav>
+		</div>
+		<main class="mdl-layout__content">
+			<div class="page-content">
+				<!-- Your content goes here -->
+			</div>
+		</main>
+	</div>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="material.css">
+	<script defer src="material.js"></script>
+	<title>Marcidus</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="icons.css"
+      rel="stylesheet">
 </head>
 
 <body>
-    <center>
-        <h1>Hardware &amp; Software</h1>
-        <div class="hw">
-            <a href="hardware.html">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Hardware</button></a>
-        </div>
-        <h1>Graphs</h1>
-        <div class="graph">
-            <a href="graph.php">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Graphs</button></a>
-        </div>
-        <h1>Creators</h1>
-        <div class="create">
-            <a href="create.html">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Creators</button></a>
-        </div>
-    </center>
+	<center>
+		<br>
+		<br>
+		<br>
+		<h1>Hardware &amp; Software</h1>
+		<div class="hw">
+			<a href="hardware.html">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Hardware</button></a>
+		</div>
+		<h1>Graphs</h1>
+		<div class="graph">
+			<a href="graph.php">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Graphs</button></a>
+		</div>
+		<h1>Creators</h1>
+		<div class="create">
+			<a href="create.html">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Creators</button></a>
+		</div>
+	</center>
 </body>
