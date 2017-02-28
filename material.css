@@ -153,13 +153,20 @@ h1 {
 h2 {
     font-size: 25px;
     font-family: arial;
-    font-weight: 900;
+    font-weight: 100;
 }
 
 h3 {
     font-size: 30;
     font-family: arial;
-    font-weight: 900;
+    font-weight: 550;
+	text-decoration: underline;
+}
+
+h4 {
+    font-size: 30;
+    font-family: arial;
+    font-weight: 500;
 }
 
 p {
