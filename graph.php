@@ -6,7 +6,7 @@
     <script defer src="material.js"></script>
     <title>Graphs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <script src="Chart.js"></script>
     <script language="JavaScript">
         function displayLineChart() {
@@ -38,6 +38,7 @@
             var options = {};
             var lineChart = new Chart(ctx).Line(data, options);
         }
+
     </script>
     <link href="icons.css" rel="stylesheet">
 </head>
@@ -52,23 +53,23 @@
             <p style="color: #7d7ddd">Outside</p>
         </div>
         <div class="list">
-          <table border="1">
-            <tr>
-              <td>Time</td>
-              <td>Location</td>
-              <td>Sensor ID</td>
-              <td>Inside</td>
-              <td>Outside</td>
-              <td>Unit</td>
-            </tr>
-            <?php
+            <table border="1">
+                <tr>
+                    <td>Time</td>
+                    <td>Location</td>
+                    <td>Sensor ID</td>
+                    <td>Inside</td>
+                    <td>Outside</td>
+                    <td>Unit</td>
+                </tr>
+                <?php
               $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
               mysqli_set_charset($link,"utf8");
               $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert_i, md_messwert_o, md_timestamp
-FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
-WHERE md_sen_id_fk = sen_id
-AND sta_id = sen_sta_id_fk
-AND mk_id = md_mk_id_fk";
+                      FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
+                      WHERE md_sen_id_fk = sen_id
+                      AND sta_id = sen_sta_id_fk
+                      AND mk_id = md_mk_id_fk";
               $result = mysqli_query($link,$sql);
 
               while($row=mysqli_fetch_array($result))
@@ -85,7 +86,7 @@ AND mk_id = md_mk_id_fk";
                 echo "</tr>";
           		}
             ?>
-          </table>
+            </table>
         </div>
     </center>
 </body>
