@@ -6,6 +6,7 @@
     <script defer src="material.js"></script>
     <title>Graphs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
     <script src="Chart.js"></script>
     <script language="JavaScript">
         function displayLineChart() {
@@ -52,14 +53,15 @@
         <div class="list">
           <table border="1">
             <tr>
-              <td>Standort</td>
+              <td>Location</td>
               <td>Sensor ID</td>
               <td>Inside</td>
               <td>Outside</td>
-              <td>Einheit</td>
+              <td>Unit</td>
             </tr>
             <?php
               $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
+              mysqli_set_charset($link,"utf8");
               $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert_i, md_messwert_o
 FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
 WHERE md_sen_id_fk = sen_id
