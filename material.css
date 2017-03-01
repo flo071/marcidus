@@ -110,19 +110,42 @@ textarea {
     a[href^="javascript:"]:after {
         content: ""
     }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid
+    }
+    thead {
+        display: table-header-group
+    }
+    tr,
+    img {
+        page-break-inside: avoid
+    }
+    img {
+        max-width: 100%!important
+    }
     h1 {
         font-size: 40px;
         font-family: arial;
         font-weight: 900;
+        margin: 24px 0
     }
     h2 {
         font-size: 25px;
         font-family: arial;
         font-weight: 900;
+        orphans: 3;
+        widows: 3;
+        margin: 24px 0;
+        page-break-after: avoid
     }
     p {
         font-size: 15px;
         font-family: arial;
+        orphans: 3;
+        widows: 3;
+        margin: 0 0 16px
     }
 }
 
@@ -142,6 +165,13 @@ a,
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
 }
 
+html {
+    width: 100%;
+    height: 100%;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation
+}
+
 a,
 a:active {
     font-family: arial;
@@ -159,6 +189,17 @@ a:focus {
 body {
     font-size: 25px;
     background-color: white;
+    width: 100%;
+    min-height: 100%;
+    margin: 0
+}
+
+main {
+    display: block
+}
+
+*[hidden] {
+    display: none!important
 }
 
 h1 {
