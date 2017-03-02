@@ -72,7 +72,7 @@
           <div class="page-content">
               <center>
                 <div class="box">
-                    <canvas id="lineChart" height="450" width="800"></canvas></div>
+                    <canvas id="lineChart" height="250" width="500"></canvas></div>
                 <div class="legend">
                     <p style="color: #7ddddd">Inside</p>
                     <p style="color: #7d7ddd">Outside</p>
