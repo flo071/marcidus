@@ -2914,7 +2914,7 @@ div.box {
     background: 0 0;
     border: none;
     border-radius: 2px;
-    color: #000;
+    color: #fff;
     position: relative;
     height: 36px;
     margin: 0;
@@ -2942,7 +2942,8 @@ div.box {
 }
 
 .mdl-button:hover {
-    background-color: rgba(158, 158, 158, .2)
+    background-color: rgba(158, 158, 158, .2);
+	color: #49bf99
 }
 
 .mdl-button:focus:not(:active) {
@@ -2966,7 +2967,7 @@ input.mdl-button[type="submit"] {
 }
 
 .mdl-button--raised {
-    background: rgba(158, 158, 158, .2);
+    background: #49BF99;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
 }
 
@@ -4894,7 +4895,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     min-height: 64px;
     max-height: 1000px;
     z-index: 3;
-    background-color: #3f51b5;
+    background-color: #317F66;
     color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     transition-duration: .2s;
