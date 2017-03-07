@@ -289,25 +289,12 @@ ol {
 }
 
 div.list {
-    background-color: #e8e8e8;
     font-family: roboto;
-    border-top: 2px solid #646464;
-    border-bottom: 2px solid #646464;
-    border-left: 2px solid #646464;
-    border-right: 2px solid #646464;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 div.box {
     background-color: #e8e8e8;
     font-family: roboto;
-    border-top: 2px solid #646464;
-    border-bottom: 2px solid #646464;
-    border-left: 2px solid #646464;
-    border-right: 2px solid #646464;
 }
 
 .mdl-typography--display-4,
