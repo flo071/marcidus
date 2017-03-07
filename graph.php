@@ -82,7 +82,6 @@
                         <tr>
                             <td>Time</td>
                             <td>Location</td>
-                            <td>Sensor ID</td>
                             <td>Inside</td>
                             <td>Outside</td>
                             <td>Unit</td>
@@ -102,12 +101,9 @@
                         echo "<tr>";
                         echo "<td>".$row["md_timestamp"]."</td>";
                         echo "<td>".$row["sta_name"]."</td>";
-                        echo "<td>".$row["sen_id"]."</td>";
-                          echo "<td>".$row["md_messwert_i"]."</td>";
-                        //echo "<br>";
+                        echo "<td>".$row["md_messwert_i"]."</td>";
                         echo "<td>".$row["md_messwert_o"]."</td>";
                         echo "<td>".$row["mk_einheit"]."</td>";
-                        //echo "<br>";
                         echo "</tr>";
                   		}
                     ?>
