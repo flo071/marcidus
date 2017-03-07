@@ -8,85 +8,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <script src="Chart.js"></script>
-    <script language="JavaScript">
-        function displayLineChart() {
-            var data = {
-                labels: [1, 2, 3, 4, 5, 6, 7],
-                datasets: [{
-                        label: "Inside",
-                        fillColor: "rgba(124,220,220,0.2)",
-                        strokeColor: "rgba(124,220,220,1)",
-                        pointColor: "rgba(124,220,220,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(124,220,220,1)",
-                        data: [17, 23, 75, 32, 65, 5, 100]
-                    },
-                    {
-                        label: "Outside",
-                        fillColor: "rgba(124,124,220,0.2)",
-                        strokeColor: "rgba(124,124,220,1)",
-                        pointColor: "rgba(124,124,220,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(124,124,220,1)",
-                        data: [100, 5, 65, 32, 75, 23, 17]
-                    }
-                ]
-            };
-            var ctx = document.getElementById("lineChart").getContext("2d");
-            var options = {};
-            var lineChart = new Chart(ctx).Line(data, options);
-        }
-
-    </script>
     <link href="icons.css" rel="stylesheet">
 </head>
 
 <body onload="displayLineChart();">
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
           mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-          <div class="mdl-layout__header-row">
-              <div class="mdl-layout-spacer"></div>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                 mdl-textfield--floating-label mdl-textfield--align-right">
-                  <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
         <i class="material-icons">search</i>
       </label>
-                  <div class="mdl-textfield__expandable-holder">
-                      <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
-                  </div>
-              </div>
-          </div>
-      </header>
-      <div class="mdl-layout__drawer">
-          <a class="mdl-layout-title" href="index.html">Marcidus</a>
-          <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="hardware.html">Hardware & Software</a>
-              <a class="mdl-navigation__link" href="graph.php">Graph</a>
-              <a class="mdl-navigation__link" href="create.html">Creators</a>
-          </nav>
-      </div>
-      <main class="mdl-layout__content">
-          <div class="page-content">
-              <center>
-                <div class="box">
-                    <canvas id="lineChart" height="250" width="500"></canvas></div>
-                <div class="legend">
-                    <p style="color: #7ddddd">Inside</p>
-                    <p style="color: #7d7ddd">Outside</p>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+                    </div>
                 </div>
-                <div class="list">
-                    <table border="1">
-                        <tr>
-                            <td>Time</td>
-                            <td>Location</td>
-                            <td>Inside</td>
-                            <td>Outside</td>
-                            <td>Unit</td>
-                        </tr>
-                        <?php
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <a class="mdl-layout-title" href="index.html">Marcidus</a>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="hardware.html">Hardware & Software</a>
+                <a class="mdl-navigation__link" href="graph.php">Graph</a>
+                <a class="mdl-navigation__link" href="create.html">Creators</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <center>
+                    <div class="box">
+                        <canvas id="lineChart" height="250" width="500"></canvas></div>
+                    <script language="JavaScript">
+                        function displayLineChart() {
+                            var data = {
+                                labels: [1, 2, 3, 4, 5, 6, 7],
+                                datasets: [{
+                                        label: "Inside",
+                                        fillColor: "rgba(124,220,220,0.2)",
+                                        strokeColor: "rgba(124,220,220,1)",
+                                        pointColor: "rgba(124,220,220,1)",
+                                        pointStrokeColor: "#fff",
+                                        pointHighlightFill: "#fff",
+                                        pointHighlightStroke: "rgba(124,220,220,1)",
+                                        data: [17, 23, 75, 32, 65, 5, 100]
+                                    },
+                                    {
+                                        label: "Outside",
+                                        fillColor: "rgba(124,124,220,0.2)",
+                                        strokeColor: "rgba(124,124,220,1)",
+                                        pointColor: "rgba(124,124,220,1)",
+                                        pointStrokeColor: "#fff",
+                                        pointHighlightFill: "#fff",
+                                        pointHighlightStroke: "rgba(124,124,220,1)",
+                                        data: [100, 5, 65, 32, 75, 23, 17]
+                                    }
+                                ]
+                            };
+                            var ctx = document.getElementById("lineChart").getContext("2d");
+                            var options = {};
+                            var lineChart = new Chart(ctx).Line(data, options);
+                        }
+
+                    </script>
+                    <div class="legend">
+                        <p style="color: #7ddddd">Inside</p>
+                        <p style="color: #7d7ddd">Outside</p>
+                    </div>
+                    <div class="list">
+                        <table border="1">
+                            <tr>
+                                <td>Time</td>
+                                <td>Location</td>
+                                <td>Inside</td>
+                                <td>Outside</td>
+                                <td>Unit</td>
+                            </tr>
+                            <?php
                       $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
                       mysqli_set_charset($link,"utf8");
                       $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert_i, md_messwert_o, md_timestamp
@@ -107,10 +107,10 @@
                         echo "</tr>";
                   		}
                     ?>
-                    </table>
-                </div>
-              </center>
-          </div>
-      </main>
-  </div>
+                        </table>
+                    </div>
+                </center>
+            </div>
+        </main>
+    </div>
 </body>
