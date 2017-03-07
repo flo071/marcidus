@@ -2949,7 +2949,7 @@ div.box {
 
 .mdl-button:hover {
     background-color: rgba(158, 158, 158, .2);
-		text-decoration-color: #49bf99
+	color: #49BF99
 }
 
 .mdl-button:focus:not(:active) {
