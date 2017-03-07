@@ -2,6 +2,12 @@
 html {
     color: rgba(0, 0, 0, .87)
 }
+@font-face {
+    font-family: 'roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('roboto'), local('Roboto-Regular'), url(Roboto-Regular.ttf) format('truetype');
+}
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -127,13 +133,13 @@ textarea {
     }
     h1 {
         font-size: 40px;
-        font-family: arial;
+        font-family: roboto;
         font-weight: 900;
         margin: 24px 0
     }
     h2 {
         font-size: 25px;
-        font-family: arial;
+        font-family: roboto;
         font-weight: 900;
         orphans: 3;
         widows: 3;
@@ -142,7 +148,7 @@ textarea {
     }
     p {
         font-size: 15px;
-        font-family: arial;
+        font-family: roboto;
         orphans: 3;
         widows: 3;
         margin: 0 0 16px
@@ -174,14 +180,14 @@ html {
 
 a,
 a:active {
-    font-family: arial;
+    font-family: roboto;
     text-decoration: none;
     color: #585858;
 }
 
 a:hover,
 a:focus {
-    font-family: arial;
+    font-family: roboto;
     text-decoration: underline;
     color: #323232;
 }
@@ -204,36 +210,36 @@ main {
 
 h1 {
     font-size: 40px;
-    font-family: arial;
+    font-family: roboto;
     font-weight: 900;
 }
 
 h2 {
     font-size: 25px;
-    font-family: arial;
+    font-family: roboto;
     font-weight: 100;
 }
 
 h3 {
     font-size: 30;
-    font-family: arial;
+    font-family: roboto;
     font-weight: 550;
     text-decoration: underline;
 }
 
 h4 {
     font-size: 30;
-    font-family: arial;
+    font-family: roboto;
     font-weight: 500;
 }
 
 p {
     font-size: 15px;
-    font-family: arial;
+    font-family: roboto;
 }
 
 blockquote {
-    font-family: arial;
+    font-family: roboto;
     position: relative;
     font-size: 24px;
     font-weight: 300;
@@ -270,21 +276,21 @@ address {
 address,
 ul,
 ol {
-    font-family: arial;
+    font-family: roboto;
     font-weight: 400;
     letter-spacing: 0
 }
 
 ul,
 ol {
-    font-family: arial;
+    font-family: roboto;
     font-size: 14px;
     line-height: 24px
 }
 
 div.list {
     background-color: #e8e8e8;
-    font-family: arial;
+    font-family: roboto;
     border-top: 2px solid #646464;
     border-bottom: 2px solid #646464;
     border-left: 2px solid #646464;
@@ -297,7 +303,7 @@ div.list {
 
 div.box {
     background-color: #e8e8e8;
-    font-family: arial;
+    font-family: roboto;
     border-top: 2px solid #646464;
     border-bottom: 2px solid #646464;
     border-left: 2px solid #646464;
@@ -306,7 +312,7 @@ div.box {
 
 .mdl-typography--display-4,
 .mdl-typography--display-4-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 112px;
     font-weight: 300;
     line-height: 1;
@@ -319,7 +325,7 @@ div.box {
 
 .mdl-typography--display-3,
 .mdl-typography--display-3-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 56px;
     font-weight: 400;
     line-height: 1.35;
@@ -332,7 +338,7 @@ div.box {
 
 .mdl-typography--display-2,
 .mdl-typography--display-2-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 45px;
     font-weight: 400;
     line-height: 48px
@@ -344,7 +350,7 @@ div.box {
 
 .mdl-typography--display-1,
 .mdl-typography--display-1-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 34px;
     font-weight: 400;
     line-height: 40px
@@ -356,7 +362,7 @@ div.box {
 
 .mdl-typography--headline,
 .mdl-typography--headline-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
@@ -369,7 +375,7 @@ div.box {
 
 .mdl-typography--title,
 .mdl-typography--title-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 20px;
     font-weight: 500;
     line-height: 1;
@@ -382,7 +388,7 @@ div.box {
 
 .mdl-typography--subhead,
 .mdl-typography--subhead-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -419,7 +425,7 @@ div.box {
 
 .mdl-typography--body-2-force-preferred-font,
 .mdl-typography--body-2-force-preferred-font-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 14px;
     font-weight: 500;
     line-height: 24px;
@@ -432,7 +438,7 @@ div.box {
 
 .mdl-typography--body-1-force-preferred-font,
 .mdl-typography--body-1-force-preferred-font-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
@@ -452,7 +458,7 @@ div.box {
 }
 
 .mdl-typography--caption-force-preferred-font {
-    font-family: arial
+    font-family: roboto
 }
 
 .mdl-typography--caption-color-contrast,
@@ -466,7 +472,7 @@ div.box {
 
 .mdl-typography--caption-force-preferred-font-color-contrast,
 .mdl-typography--menu {
-    font-family: arial
+    font-family: roboto
 }
 
 .mdl-typography--menu {
@@ -483,7 +489,7 @@ div.box {
 .mdl-typography--menu-color-contrast,
 .mdl-typography--button,
 .mdl-typography--button-color-contrast {
-    font-family: arial;
+    font-family: roboto;
     font-size: 14px;
     font-weight: 500;
     line-height: 1;
@@ -556,7 +562,7 @@ div.box {
 }
 
 .material-icons {
-    font-family: arial;
+    font-family: roboto;
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
@@ -2881,7 +2887,7 @@ div.box {
     position: absolute;
     top: -11px;
     right: -24px;
-    font-family: arial;
+    font-family: roboto;
     font-weight: 600;
     font-size: 12px;
     width: 22px;
@@ -2921,7 +2927,7 @@ div.box {
     min-width: 64px;
     padding: 0 16px;
     display: inline-block;
-    font-family: arial;
+    font-family: roboto;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -2943,7 +2949,7 @@ div.box {
 
 .mdl-button:hover {
     background-color: rgba(158, 158, 158, .2);
-	color: #49bf99
+		text-decoration-color: #49bf99
 }
 
 .mdl-button:focus:not(:active) {
@@ -3447,7 +3453,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 
 .mdl-chip {
     height: 32px;
-    font-family: arial;
+    font-family: roboto;
     line-height: 32px;
     padding: 0 12px;
     border: 0;
@@ -3602,7 +3608,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 
 .mdl-data-table th.mdl-data-table__header--sorted-ascending:before,
 .mdl-data-table th.mdl-data-table__header--sorted-descending:before {
-    font-family: arial;
+    font-family: roboto;
     font-weight: 400;
     font-style: normal;
     line-height: 1;
@@ -3825,7 +3831,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-mega-footer--heading-checkbox+.mdl-mega-footer__heading:after,
 .mdl-mega-footer__heading-checkbox+.mdl-mega-footer--heading:after,
 .mdl-mega-footer__heading-checkbox+.mdl-mega-footer__heading:after {
-    font-family: arial;
+    font-family: roboto;
     content: '\E5CE'
 }
 
@@ -3844,7 +3850,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-mega-footer--heading-checkbox:checked+.mdl-mega-footer__heading:after,
 .mdl-mega-footer__heading-checkbox:checked+.mdl-mega-footer--heading:after,
 .mdl-mega-footer__heading-checkbox:checked+.mdl-mega-footer__heading:after {
-    font-family: arial;
+    font-family: roboto;
     content: '\E5CF'
 }
 
@@ -3892,7 +3898,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 
 .mdl-mega-footer--link-list li,
 .mdl-mega-footer__link-list li {
-    font-family: arial;
+    font-family: roboto;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0;
@@ -3942,7 +3948,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-logo {
-    font-family: arial;
+    font-family: roboto;
     margin-bottom: 16px;
     color: #fff
 }
@@ -3950,14 +3956,14 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-mega-footer--bottom-section .mdl-mega-footer--link-list li,
 .mdl-mega-footer__bottom-section .mdl-mega-footer__link-list li {
     float: left;
-    font-family: arial;
+    font-family: roboto;
     margin-bottom: 0;
     margin-right: 16px
 }
 
 @media screen and (min-width:760px) {
     .mdl-logo {
-        font-family: arial;
+        font-family: roboto;
         float: left;
         margin-bottom: 0;
         margin-right: 16px
@@ -3985,7 +3991,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-mini-footer .mdl-logo {
-    font-family: arial;
+    font-family: roboto;
     line-height: 36px
 }
 
@@ -4004,7 +4010,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 
 .mdl-mini-footer--link-list li,
 .mdl-mini-footer__link-list li {
-    font-family: arial;
+    font-family: roboto;
     margin-bottom: 0;
     margin-right: 16px
 }
@@ -4012,7 +4018,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 @media screen and (min-width:760px) {
     .mdl-mini-footer--link-list li,
     .mdl-mini-footer__link-list li {
-        font-family: arial;
+        font-family: roboto;
         line-height: 36px
     }
 }
@@ -4152,7 +4158,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-list__item {
-    font-family: arial;
+    font-family: roboto;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: .04em;
@@ -4699,7 +4705,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-layout-title {
     display: block;
     position: relative;
-    font-family: arial;
+    font-family: roboto;
     font-size: 20px;
     line-height: 1;
     letter-spacing: .02em;
@@ -4833,7 +4839,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     cursor: pointer;
     font-size: 26px;
     line-height: 56px;
-    font-family: arial;
+    font-family: roboto;
     margin: 8px 12px;
     top: 0;
     left: 0;
@@ -5827,7 +5833,7 @@ _:-ms-input-placeholder,
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    font-family: arial;
+    font-family: roboto;
     will-change: transform;
     -webkit-transform: translate(0, 80px);
     transform: translate(0, 80px);
@@ -5883,7 +5889,7 @@ _:-ms-input-placeholder,
     color: #ff4081;
     float: right;
     padding: 14px 24px 14px 12px;
-    font-family: arial;
+    font-family: roboto;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -6634,7 +6640,7 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
     border-bottom: 1px solid rgba(0, 0, 0, .12);
     display: block;
     font-size: 16px;
-    font-family: arial;
+    font-family: roboto;
     margin: 0;
     padding: 4px 0;
     width: 100%;
