@@ -46,24 +46,44 @@
                             var data = {
                                 labels: [1, 2, 3, 4, 5, 6, 7],
                                 datasets: [{
-                                        label: "Inside",
-                                        fillColor: "rgba(124,220,220,0.2)",
-                                        strokeColor: "rgba(124,220,220,1)",
-                                        pointColor: "rgba(124,220,220,1)",
+                                        label: "Inside Room 1",
+                                        fillColor: "rgba(90, 115, 115, 0.2)",
+                                        strokeColor: "rgb(90, 115, 115)",
+                                        pointColor: "rgba(90, 115, 115,1)",
                                         pointStrokeColor: "#fff",
                                         pointHighlightFill: "#fff",
                                         pointHighlightStroke: "rgba(124,220,220,1)",
                                         data: [17, 23, 75, 32, 65, 5, 100]
                                     },
                                     {
-                                        label: "Outside",
-                                        fillColor: "rgba(124,124,220,0.2)",
-                                        strokeColor: "rgba(124,124,220,1)",
-                                        pointColor: "rgba(124,124,220,1)",
+                                        label: "Outside Room 1",
+                                        fillColor: "rgba(93, 70, 102,0.2)",
+                                        strokeColor: "rgb(93, 70, 102)",
+                                        pointColor: "rgba(93, 70, 102,1)",
                                         pointStrokeColor: "#fff",
                                         pointHighlightFill: "#fff",
-                                        pointHighlightStroke: "rgba(124,124,220,1)",
+                                        pointHighlightStroke: "rgba(93, 70, 102,1)",
                                         data: [100, 5, 65, 32, 75, 23, 17]
+                                    },
+                                    {
+                                        label: "Inside Room 2",
+                                        fillColor: "rgba(93, 93, 93,0.2)",
+                                        strokeColor: "rgb(93, 93, 93)",
+                                        pointColor: "rgba(93, 93, 93,1)",
+                                        pointStrokeColor: "#fff",
+                                        pointHighlightFill: "#fff",
+                                        pointHighlightStroke: "rgba(93, 93, 93,1)",
+                                        data: [20, 35, 22, 3, 95, 2, 38]
+                                    },
+                                    {
+                                        label: "Outside Room 2",
+                                        fillColor: "rgba(115, 24, 24,0.2)",
+                                        strokeColor: "rgba(115, 24, 24, 1)",
+                                        pointColor: "rgba(115, 24, 24,1)",
+                                        pointStrokeColor: "#fff",
+                                        pointHighlightFill: "#fff",
+                                        pointHighlightStroke: "rgba(115, 24, 24,1)",
+                                        data: [56, 85, 36, 69, 3, 98, 56]
                                     }
                                 ]
                             };
@@ -74,8 +94,10 @@
 
                     </script>
                     <div class="legend">
-                        <p style="color: #7ddddd">Inside</p>
-                        <p style="color: #7d7ddd">Outside</p>
+                        <p style="color: rgb( 90, 115, 115)">Inside Room 1 </p>
+                        <p style="color: rgb( 93,  70, 102)">Outside Room 1</p>
+                        <p style="color: rgb( 93,  93,  93)">Inside Room 2 </p>
+                        <p style="color: rgb(115,  24,  24)">Outside Room 2</p>
                     </div>
                     <div class="list">
                         <table border="1">
