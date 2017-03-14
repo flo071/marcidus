@@ -18,19 +18,29 @@ while($row=mysqli_fetch_array($result))
 }
 
 $chart_data = "datasets: [";
+$r = 100;
+$g = 5;
+$b = 150;
 
 foreach ($md_data as $sta_name => $sen_id)
 {
   foreach ($sen_id as $key => $value)
   {
+    $color = $r.','.$g.','.$b;
           $chart_data .= '{label: "'.$key.'",';
-          $chart_data .= 'fillColor: "rgba(90, 115, 115, 0.2)",';
-          $chart_data .= 'strokeColor: "rgb(90, 115, 115)",';
-          $chart_data .= 'pointColor: "rgba(90, 115, 115,1)",';
+          $chart_data .= 'fillColor: "rgba('.$color.', 0.2)",';
+          $chart_data .= 'strokeColor: "rgb('.$color.')",';
+          $chart_data .= 'pointColor: "rgba('.$color.',1)",';
           $chart_data .= 'pointStrokeColor: "#fff",';
           $chart_data .= 'pointHighlightFill: "#fff",';
           $chart_data .= 'pointHighlightStroke: "rgba(124,220,220,1)",';
           $chart_data .= 'data: ['.rtrim($value,',').']},';
+        $r = $r+25;
+        $g = $g+15;
+        $b = $b+50;
+        if ($r > 250) $r = 1;
+        if ($g > 250) $g = 32;
+        if ($b > 250) $b = 148;
   }
 }
 $chart_data = rtrim($chart_data, ',');
