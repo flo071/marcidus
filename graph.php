@@ -69,7 +69,7 @@ $chart_data .= "]";
         <div class="mdl-layout__drawer">
             <a class="mdl-layout-title" href="index.html"><img src="favicon.ico" alt="Icon" width="25" height="25">Marcidus</a>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="hardware.html">Hardware & Software</a>
+                <a class="mdl-navigation__link" href="hardware.html">Hardware &amp; Software</a>
                 <a class="mdl-navigation__link" href="graph.php">Graph</a>
                 <a class="mdl-navigation__link" href="create.html">Creators</a>
             </nav>
