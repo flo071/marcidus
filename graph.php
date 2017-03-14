@@ -3,7 +3,7 @@
 <?php
 $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
 mysqli_set_charset($link,"utf8");
-$sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert_i, md_messwert_o, md_timestamp
+$sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
   FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
   WHERE md_sen_id_fk = sen_id
   AND sta_id = sen_sta_id_fk
@@ -14,7 +14,7 @@ $i=0;
 while($row=mysqli_fetch_array($result))
 {
   $i++;
-  $md_data[$row["sta_name"]][$row["sen_id"]] .= $row["md_messwert_i"].',';
+  $md_data[$row["sta_name"]][$row["sen_id"]] .= $row["md_messwert"].',';
 }
 
 $chart_data = "datasets: [";
@@ -102,14 +102,13 @@ $chart_data .= "]";
                             <tr>
                                 <td>Time</td>
                                 <td>Location</td>
-                                <td>Inside</td>
-                                <td>Outside</td>
+                                <td>Value</td>
                                 <td>Unit</td>
                             </tr>
                             <?php
                       $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
                       mysqli_set_charset($link,"utf8");
-                      $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert_i, md_messwert_o, md_timestamp
+                      $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
                               FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
                               WHERE md_sen_id_fk = sen_id
                               AND sta_id = sen_sta_id_fk
@@ -121,8 +120,7 @@ $chart_data .= "]";
                         echo "<tr>";
                         echo "<td>".$row["md_timestamp"]."</td>";
                         echo "<td>".$row["sta_name"]."</td>";
-                        echo "<td>".$row["md_messwert_i"]."</td>";
-                        echo "<td>".$row["md_messwert_o"]."</td>";
+                        echo "<td>".$row["md_messwert"]."</td>";
                         echo "<td>".$row["mk_einheit"]."</td>";
                         echo "</tr>";
                   		}
