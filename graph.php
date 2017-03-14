@@ -74,33 +74,35 @@ $chart_data .= "]";
                         </div>
                     </div>
                 </div>
-            </header>
-            <div class="mdl-layout__drawer">
-                <a class="mdl-layout-title" href="index.html"><img src="favicon.ico" alt="Icon" width="25" height="25">Marcidus</a>
-                <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="hardware.html">Hardware &amp; Software</a>
-                    <a class="mdl-navigation__link" href="graph.php">Graph</a>
-                    <a class="mdl-navigation__link" href="create.html">Creators</a>
-                    <hr>
-                    <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus">Github Repo (Website)</a>
-                    <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus_app">Github Repo (App)</a>
-                </nav>
-            </div>
-            <main class="mdl-layout__content">
-                <div class="page-content">
-                    <center>
-                        <div class="box">
-                            <canvas id="lineChart" height="250" width="500"></canvas></div>
-                        <script language="JavaScript">
-                            function displayLineChart() {
-                                var data = {
-                                    <?php echo $chart_labels; ?>,
-                                    <?php echo $chart_data; ?>
-                                };
-                                var ctx = document.getElementById("lineChart").getContext("2d");
-                                var options = {};
-                                var lineChart = new Chart(ctx).Line(data, options);
-                            }
+           
+        </header>
+        <div class="mdl-layout__drawer">
+            <a class="mdl-layout-title" href="index.html"><img src="favicon.ico" alt="Icon" width="25" height="25">Marcidus</a>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="hardware.html">Hardware &amp; Software</a>
+                <a class="mdl-navigation__link" href="graph.php">Graph</a>
+                <a class="mdl-navigation__link" href="create.html">Creators</a>
+                <a class="mdl-navigation__link" href="Marcidus.apk">Download App</a>
+                <hr>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus">Github Repo (Website)</a>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus_app">Github Repo (App)</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <center>
+                    <div class="box">
+                        <canvas id="lineChart" height="250" width="500"></canvas></div>
+                    <script language="JavaScript">
+                        function displayLineChart() {
+                            var data = {
+                                <?php echo $chart_labels; ?>,
+                                <?php echo $chart_data; ?>
+                            };
+                            var ctx = document.getElementById("lineChart").getContext("2d");
+                            var options = {};
+                            var lineChart = new Chart(ctx).Line(data, options);
+                        }
 
                         </script>
                         <div class="list">
