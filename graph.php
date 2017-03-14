@@ -91,6 +91,9 @@ $chart_data .= "]";
                 <a class="mdl-navigation__link" href="hardware.html">Hardware &amp; Software</a>
                 <a class="mdl-navigation__link" href="graph.php">Graph</a>
                 <a class="mdl-navigation__link" href="create.html">Creators</a>
+                <hr>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus">Github Repo (Website)</a>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus_app">Github Repo (App)</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
