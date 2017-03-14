@@ -91,12 +91,6 @@ $chart_data .= "]";
                         }
 
                     </script>
-                    <div class="legend">
-                        <p style="color: rgb( 90, 115, 115)">Inside Room 1 </p>
-                        <p style="color: rgb( 93,  70, 102)">Outside Room 1</p>
-                        <p style="color: rgb( 93,  93,  93)">Inside Room 2 </p>
-                        <p style="color: rgb(115,  24,  24)">Outside Room 2</p>
-                    </div>
                     <div class="list">
                         <table border="1">
                             <tr>
