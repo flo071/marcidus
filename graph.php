@@ -11,11 +11,20 @@ $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
 $result = mysqli_query($link,$sql);
 
 $i=0;
+$chart_labels = "labels: [";
 while($row=mysqli_fetch_array($result))
 {
   $i++;
   $md_data[$row["sta_name"]][$row["sen_id"]] .= $row["md_messwert"].',';
+  $chart_labels .= "'".date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600)."',";
 }
+
+
+
+
+$chart_labels = rtrim($chart_labels, ',');
+$chart_labels .= "]";
+
 
 $chart_data = "datasets: [";
 $r = 0;
@@ -92,7 +101,7 @@ $chart_data .= "]";
                     <script language="JavaScript">
                         function displayLineChart() {
                             var data = {
-                                labels: [1, 2, 3, 4, 5, 6, 7],
+                                <?php echo $chart_labels; ?>,
                                 <?php echo $chart_data; ?>
                             };
                             var ctx = document.getElementById("lineChart").getContext("2d");
