@@ -18,9 +18,9 @@ while($row=mysqli_fetch_array($result))
 }
 
 $chart_data = "datasets: [";
-$r = 100;
-$g = 5;
-$b = 150;
+$r = 0;
+$g = 150;
+$b = 100;
 
 foreach ($md_data as $sta_name => $sen_id)
 {
@@ -35,12 +35,12 @@ foreach ($md_data as $sta_name => $sen_id)
           $chart_data .= 'pointHighlightFill: "#fff",';
           $chart_data .= 'pointHighlightStroke: "rgba(124,220,220,1)",';
           $chart_data .= 'data: ['.rtrim($value,',').']},';
-        $r = $r+25;
-        $g = $g+15;
-        $b = $b+50;
-        if ($r > 250) $r = 1;
-        if ($g > 250) $g = 32;
-        if ($b > 250) $b = 148;
+        $r = $r+10;
+        //$g = $g+25;
+        $b = $b+60;
+        if ($r > 250) $r = 50;
+        if ($g > 250) $g = 150;
+        if ($b > 250) $b = 0;
   }
 }
 $chart_data = rtrim($chart_data, ',');
@@ -122,7 +122,9 @@ $chart_data .= "]";
                       while($row=mysqli_fetch_array($result))
                   		{
                         echo "<tr>";
-                        echo "<td>".$row["md_timestamp"]."</td>";
+                        echo "<td>";
+                        echo date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600);
+                        echo "</td>";
                         echo "<td>".$row["sta_name"]."</td>";
                         echo "<td>".$row["md_messwert"]."</td>";
                         echo "<td>".$row["mk_einheit"]."</td>";
