@@ -1,5 +1,43 @@
 <!DOCTYPE html>
 
+<?php
+$link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
+mysqli_set_charset($link,"utf8");
+$sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert_i, md_messwert_o, md_timestamp
+  FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
+  WHERE md_sen_id_fk = sen_id
+  AND sta_id = sen_sta_id_fk
+  AND mk_id = md_mk_id_fk";
+$result = mysqli_query($link,$sql);
+
+$i=0;
+while($row=mysqli_fetch_array($result))
+{
+  $i++;
+  $md_data[$row["sta_name"]][$row["sen_id"]] .= $row["md_messwert_i"].',';
+}
+
+$chart_data = "datasets: [";
+
+foreach ($md_data as $sta_name => $sen_id)
+{
+  foreach ($sen_id as $key => $value)
+  {
+          $chart_data .= '{label: "'.$key.'",';
+          $chart_data .= 'fillColor: "rgba(90, 115, 115, 0.2)",';
+          $chart_data .= 'strokeColor: "rgb(90, 115, 115)",';
+          $chart_data .= 'pointColor: "rgba(90, 115, 115,1)",';
+          $chart_data .= 'pointStrokeColor: "#fff",';
+          $chart_data .= 'pointHighlightFill: "#fff",';
+          $chart_data .= 'pointHighlightStroke: "rgba(124,220,220,1)",';
+          $chart_data .= 'data: ['.rtrim($value,',').']},';
+  }
+}
+$chart_data = rtrim($chart_data, ',');
+
+$chart_data .= "]";
+
+?>
 <head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="material.css">
@@ -45,47 +83,7 @@
                         function displayLineChart() {
                             var data = {
                                 labels: [1, 2, 3, 4, 5, 6, 7],
-                                datasets: [{
-                                        label: "Inside Room 1",
-                                        fillColor: "rgba(90, 115, 115, 0.2)",
-                                        strokeColor: "rgb(90, 115, 115)",
-                                        pointColor: "rgba(90, 115, 115,1)",
-                                        pointStrokeColor: "#fff",
-                                        pointHighlightFill: "#fff",
-                                        pointHighlightStroke: "rgba(124,220,220,1)",
-                                        data: [17, 23, 75, 32, 65, 5, 100]
-                                    },
-                                    {
-                                        label: "Outside Room 1",
-                                        fillColor: "rgba(93, 70, 102,0.2)",
-                                        strokeColor: "rgb(93, 70, 102)",
-                                        pointColor: "rgba(93, 70, 102,1)",
-                                        pointStrokeColor: "#fff",
-                                        pointHighlightFill: "#fff",
-                                        pointHighlightStroke: "rgba(93, 70, 102,1)",
-                                        data: [100, 5, 65, 32, 75, 23, 17]
-                                    },
-                                    {
-                                        label: "Inside Room 2",
-                                        fillColor: "rgba(93, 93, 93,0.2)",
-                                        strokeColor: "rgb(93, 93, 93)",
-                                        pointColor: "rgba(93, 93, 93,1)",
-                                        pointStrokeColor: "#fff",
-                                        pointHighlightFill: "#fff",
-                                        pointHighlightStroke: "rgba(93, 93, 93,1)",
-                                        data: [20, 35, 22, 3, 95, 2, 38]
-                                    },
-                                    {
-                                        label: "Outside Room 2",
-                                        fillColor: "rgba(115, 24, 24,0.2)",
-                                        strokeColor: "rgba(115, 24, 24, 1)",
-                                        pointColor: "rgba(115, 24, 24,1)",
-                                        pointStrokeColor: "#fff",
-                                        pointHighlightFill: "#fff",
-                                        pointHighlightStroke: "rgba(115, 24, 24,1)",
-                                        data: [56, 85, 36, 69, 3, 98, 56]
-                                    }
-                                ]
+                                <?php echo $chart_data; ?>
                             };
                             var ctx = document.getElementById("lineChart").getContext("2d");
                             var options = {};
@@ -131,6 +129,7 @@
                     ?>
                         </table>
                     </div>
+
                 </center>
             </div>
         </main>
