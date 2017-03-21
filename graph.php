@@ -27,19 +27,19 @@ foreach ($md_data as $sta_name => $sen_id)
   foreach ($sen_id as $key => $value)
   {
     $color = $r.','.$g.','.$b;
-          $chart_data .= '{label: "'.$key.'",';
-          $chart_data .= 'fillColor: "rgba('.$color.', 0.2)",';
-          $chart_data .= 'strokeColor: "rgb('.$color.')",';
-          $chart_data .= 'pointColor: "rgba('.$color.',1)",';
-          $chart_data .= 'pointStrokeColor: "#fff",';
-          $chart_data .= 'pointHighlightFill: "#fff",';
-          $chart_data .= 'pointHighlightStroke: "rgba('.$color.',1)",';
-          $chart_data .= 'data: ['.rtrim($value,',').']},';
-        $r = $r+10;
-        $b = $b+60;
-        if ($r > 250) $r = 50;
-        if ($g > 250) $g = 150;
-        if ($b > 250) $b = 0;
+    $chart_data .= '{label: "'.$key.'",';
+    $chart_data .= 'fillColor: "rgba('.$color.', 0.2)",';
+    $chart_data .= 'strokeColor: "rgb('.$color.')",';
+    $chart_data .= 'pointColor: "rgba('.$color.',1)",';
+    $chart_data .= 'pointStrokeColor: "#fff",';
+    $chart_data .= 'pointHighlightFill: "#fff",';
+    $chart_data .= 'pointHighlightStroke: "rgba('.$color.',1)",';
+    $chart_data .= 'data: ['.rtrim($value,',').']},';
+    $r = $r+10;
+    $b = $b+60;
+    if ($r > 250) $r = 50;
+    if ($g > 250) $g = 150;
+    if ($b > 250) $b = 0;
   }
 }
 $chart_data = rtrim($chart_data, ',');
@@ -61,6 +61,48 @@ $chart_data .= "]";
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <div class="mdl-layout-spacer"></div>
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link">
+                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                              <li class="mdl-menu__item">Some Action</li>
+                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+                              <li class="mdl-menu__item">Yet Another Action</li>
+                            </ul>
+                        </a>
+                        <a class="mdl-navigation__link">
+                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                              <li class="mdl-menu__item">Some Action</li>
+                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+                              <li class="mdl-menu__item">Yet Another Action</li>
+                            </ul>
+                        </a>
+                        <a class="mdl-navigation__link">
+                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                              <li class="mdl-menu__item">Some Action</li>
+                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+                              <li class="mdl-menu__item">Yet Another Action</li>
+                            </ul>
+                        </a>
+                        <a class="mdl-navigation__link">
+                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                              <li class="mdl-menu__item">Some Action</li>
+                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+                              <li class="mdl-menu__item">Yet Another Action</li>
+                            </ul>
+                        </a>
+                    </nav>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
                         <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
                             <i class="material-icons">search</i>
