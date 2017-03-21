@@ -79,8 +79,8 @@ $chart_data .= "]";
                 <a class="mdl-navigation__link" href="create.html">Creators</a>
                 <a class="mdl-navigation__link" href="Marcidus.apk">Download App</a>
                 <hr>
-                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus">Github Repo (Website)</a>
-                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus_app">Github Repo (App)</a>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus" target="_blank">Github Repo (Website)</a>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus_app" target="_blank">Github Repo (App)</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
