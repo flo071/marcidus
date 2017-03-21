@@ -36,7 +36,6 @@ foreach ($md_data as $sta_name => $sen_id)
           $chart_data .= 'pointHighlightStroke: "rgba(124,220,220,1)",';
           $chart_data .= 'data: ['.rtrim($value,',').']},';
         $r = $r+10;
-        //$g = $g+25;
         $b = $b+60;
         if ($r > 250) $r = 50;
         if ($g > 250) $g = 150;
@@ -46,7 +45,6 @@ foreach ($md_data as $sta_name => $sen_id)
 $chart_data = rtrim($chart_data, ',');
 $chart_data .= "]";
 ?>
-
     <head>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="stylesheet" href="material.css">
@@ -57,25 +55,22 @@ $chart_data .= "]";
         <script src="Chart.js"></script>
         <link href="icons.css" rel="stylesheet">
     </head>
-
     <body onload="displayLineChart();">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
           mdl-layout--fixed-header">
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <div class="mdl-layout-spacer"></div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                mdl-textfield--floating-label mdl-textfield--align-right">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
                         <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
-        <i class="material-icons">search</i>
-      </label>
+                            <i class="material-icons">search</i>
+                        </label>
                         <div class="mdl-textfield__expandable-holder">
                             <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
                         </div>
                     </div>
                 </div>
-           
-        </header>
+            </header>
         <div class="mdl-layout__drawer">
             <a class="mdl-layout-title" href="index.html"><img src="favicon.ico" alt="Icon" width="25" height="25">Marcidus</a>
             <nav class="mdl-navigation">
@@ -103,7 +98,6 @@ $chart_data .= "]";
                             var options = {};
                             var lineChart = new Chart(ctx).Line(data, options);
                         }
-
                         </script>
                         <div class="list">
                             <table border="1">
@@ -114,29 +108,28 @@ $chart_data .= "]";
                                     <td>Unit</td>
                                 </tr>
                                 <?php
-                      $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
-                      mysqli_set_charset($link,"utf8");
-                      $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
-                              FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
-                              WHERE md_sen_id_fk = sen_id
-                              AND sta_id = sen_sta_id_fk
-                              AND mk_id = md_mk_id_fk";
-                      $result = mysqli_query($link,$sql);
-                      while($row=mysqli_fetch_array($result))
-                  		{
-                        echo "<tr>";
-                        echo "<td>";
-                        echo date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600);
-                        echo "</td>";
-                        echo "<td>".$row["sta_name"]."</td>";
-                        echo "<td>".$row["md_messwert"]."</td>";
-                        echo "<td>".$row["mk_einheit"]."</td>";
-                        echo "</tr>";
-                  		}
-                    ?>
+                                    $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
+                                    mysqli_set_charset($link,"utf8");
+                                    $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
+                                              FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
+                                             WHERE md_sen_id_fk = sen_id
+                                               AND sta_id = sen_sta_id_fk
+                                               AND mk_id = md_mk_id_fk";
+                                    $result = mysqli_query($link,$sql);
+                                    while($row=mysqli_fetch_array($result))
+                  		              {
+                                        echo "<tr>";
+                                        echo "<td>";
+                                        echo date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600);
+                                        echo "</td>";
+                                        echo "<td>".$row["sta_name"]."</td>";
+                                        echo "<td>".$row["md_messwert"]."</td>";
+                                        echo "<td>".$row["mk_einheit"]."</td>";
+                                        echo "</tr>";
+                  		              }
+                                ?>
                             </table>
                         </div>
-
                     </center>
                 </div>
             </main>
