@@ -55,7 +55,7 @@ $chart_data .= "]";
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="stylesheet" href="material.css">
         <script defer src="material.js"></script>
-        <title>Graphs</title>
+        <title>Humidity Graph</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8" />
         <script src="Chart.js"></script>
@@ -123,7 +123,7 @@ $chart_data .= "]";
             <a class="mdl-layout-title" href="index.html"><img src="favicon.ico" alt="Icon" width="25" height="25">Marcidus</a>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="hardware.html">Hardware &amp; Software</a>
-                <a class="mdl-navigation__link" href="graph.php">Graph</a>
+                <a class="mdl-navigation__link" href="graph.php">Humidity Graph</a>
                 <a class="mdl-navigation__link" href="create.html">Creators</a>
                 <a class="mdl-navigation__link" href="Marcidus.apk">Download App</a>
                 <hr>
@@ -151,9 +151,9 @@ $chart_data .= "]";
                             <table border="1">
                                 <tr>
                                     <td><center>Time</center></td>
-                                    <td>Location</td>
-                                    <td>Value</td>
-                                    <td>Unit</td>
+                                    <td><center>Location</center></td>
+                                    <td><center>Value</center></td>
+                                    <td><center>Unit</center></td>
                                 </tr>
                                 <?php
                                     $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
