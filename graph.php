@@ -6,7 +6,8 @@ $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
   FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
   WHERE md_sen_id_fk = sen_id
   AND sta_id = sen_sta_id_fk
-  AND mk_id = md_mk_id_fk";
+  AND mk_id = md_mk_id_fk
+  ORDER BY md_timestamp";
 $result = mysqli_query($link,$sql);
 $i=0;
 $chart_labels = "labels: [";
@@ -14,7 +15,12 @@ while($row=mysqli_fetch_array($result))
 {
   $i++;
   $md_data[$row["sta_name"]][$row["sen_id"]] .= $row["md_messwert"].',';
-  $chart_labels .= "'".date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600)."',";
+  if ((round(strtotime($row["md_timestamp"])/600)*600) != $old_timestamp)
+  {
+    $chart_labels .= "'".date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600)."',";
+  }
+
+    $old_timestamp = round(strtotime($row["md_timestamp"])/600)*600;
 }
 $chart_labels = rtrim($chart_labels, ',');
 $chart_labels .= "]";
