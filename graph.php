@@ -150,7 +150,7 @@ $chart_data .= "]";
                         <div class="list">
                             <table border="1">
                                 <tr>
-                                    <td>Time</td>
+                                    <td><center>Time</center></td>
                                     <td>Location</td>
                                     <td>Value</td>
                                     <td>Unit</td>
