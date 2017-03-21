@@ -69,43 +69,15 @@ $chart_data .= "]";
                     <div class="mdl-layout-spacer"></div>
                     <nav class="mdl-navigation">
                         <a class="mdl-navigation__link">
-                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
                                 <i class="material-icons">more_vert</i>
                             </button>
-                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-                              <li class="mdl-menu__item">Some Action</li>
-                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
-                              <li class="mdl-menu__item">Yet Another Action</li>
-                            </ul>
-                        </a>
-                        <a class="mdl-navigation__link">
-                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
-                                <i class="material-icons">more_vert</i>
-                            </button>
-                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-                              <li class="mdl-menu__item">Some Action</li>
-                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
-                              <li class="mdl-menu__item">Yet Another Action</li>
-                            </ul>
-                        </a>
-                        <a class="mdl-navigation__link">
-                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
-                                <i class="material-icons">more_vert</i>
-                            </button>
-                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-                              <li class="mdl-menu__item">Some Action</li>
-                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
-                              <li class="mdl-menu__item">Yet Another Action</li>
-                            </ul>
-                        </a>
-                        <a class="mdl-navigation__link">
-                            <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
-                                <i class="material-icons">more_vert</i>
-                            </button>
-                            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-                              <li class="mdl-menu__item">Some Action</li>
-                              <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
-                              <li class="mdl-menu__item">Yet Another Action</li>
+                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                                for="demo-menu-lower-right">
+                              <li class="mdl-menu__item">Room 1 IN</li>
+                              <li class="mdl-menu__item">Room 1 OUT</li>
+                              <li class="mdl-menu__item">Room 2 IN</li>
+                              <li class="mdl-menu__item">Room 2 OUT</li>
                             </ul>
                         </a>
                     </nav>
