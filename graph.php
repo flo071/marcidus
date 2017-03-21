@@ -147,6 +147,9 @@ $chart_data .= "]";
                             var lineChart = new Chart(ctx).Line(data, options);
                         }
                         </script>
+                        <div class="nix">
+                            <br>
+                        </div>
                         <div class="list">
                             <table border="1">
                                 <tr>
