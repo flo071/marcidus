@@ -91,7 +91,7 @@ $chart_data .= "]";
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
-                <center>
+                    <center>
                     <div class="box">
                         <canvas id="lineChart" height="250" width="500"></canvas></div>
                     <script language="JavaScript">
@@ -104,7 +104,7 @@ $chart_data .= "]";
                             var options = {};
                             var lineChart = new Chart(ctx).Line(data, options);
                         }
-                        </script>
+                        </script>       
                         <div class="adjustments">
                             <div class="room1">
                                 <div class="slider-room1in">
@@ -112,6 +112,7 @@ $chart_data .= "]";
                                         .slider-room1in {
                                         width: 30vw;
                                         max-width: 360px;
+                                        display: inline-block;
                                         }
                                     </style>
                                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
@@ -121,12 +122,13 @@ $chart_data .= "]";
                                         .slider-room1out {
                                         width: 30vw;
                                         max-width: 360px;
+                                        display: inline-block;
                                         }
                                     </style>
                                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
                                 </div>
                             </div>
-                        </div>
+                        </div>      
                         <div class="list">
                             <table border="1">
                                 <tr>
