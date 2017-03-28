@@ -67,20 +67,6 @@ $chart_data .= "]";
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <div class="mdl-layout-spacer"></div>
-                    <nav class="mdl-navigation">
-                        <a class="mdl-navigation__link">
-                            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
-                                <i class="material-icons">more_vert</i>
-                            </button>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                                for="demo-menu-lower-right">
-                              <li class="mdl-menu__item">Room 1 IN</li>
-                              <li class="mdl-menu__item">Room 1 OUT</li>
-                              <li class="mdl-menu__item">Room 2 IN</li>
-                              <li class="mdl-menu__item">Room 2 OUT</li>
-                            </ul>
-                        </a>
-                    </nav>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
                         <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
                             <i class="material-icons">search</i>
