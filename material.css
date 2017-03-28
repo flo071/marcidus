@@ -233,6 +233,11 @@ h4 {
     font-weight: 500;
 }
 
+h5 {
+        font-family: roboto;
+        font-size: 23px;
+    }
+
 p {
     font-size: 15px;
     font-family: roboto;

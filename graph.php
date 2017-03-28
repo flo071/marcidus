@@ -115,6 +115,7 @@ $chart_data .= "]";
                                         display: inline-block;
                                         }
                                     </style>
+                                    <h5>Room 1 IN</h5>
                                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
                                 </div>
                                 <div class="slider-room1out">
@@ -125,6 +126,7 @@ $chart_data .= "]";
                                         display: inline-block;
                                         }
                                     </style>
+                                    <h5>Room 1 OUT</h5>
                                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
                                 </div>
                             </div>
@@ -137,6 +139,7 @@ $chart_data .= "]";
                                         display: inline-block;
                                         }
                                     </style>
+                                    <h5>Room 2 IN</h5>
                                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
                                 </div>
                                 <div class="slider-room2out">
@@ -147,10 +150,12 @@ $chart_data .= "]";
                                         display: inline-block;
                                         }
                                     </style>
+                                    <h5>Room 2 OUT</h5>
                                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
                                 </div>
                             </div>
-                        </div>      
+                        </div>
+                        <br>    
                         <div class="list">
                             <table border="1">
                                 <tr>
