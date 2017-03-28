@@ -128,6 +128,28 @@ $chart_data .= "]";
                                     <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
                                 </div>
                             </div>
+                            <div class="room2">
+                                <div class="slider-room2in">
+                                    <style>
+                                        .slider-room2in {
+                                        width: 30vw;
+                                        max-width: 360px;
+                                        display: inline-block;
+                                        }
+                                    </style>
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+                                </div>
+                                <div class="slider-room2out">
+                                    <style>
+                                        .slider-room2out {
+                                        width: 30vw;
+                                        max-width: 360px;
+                                        display: inline-block;
+                                        }
+                                    </style>
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+                                </div>
+                            </div>
                         </div>      
                         <div class="list">
                             <table border="1">
