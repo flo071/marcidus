@@ -10,17 +10,18 @@ $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
   ORDER BY md_timestamp";
 $result = mysqli_query($link,$sql);
 $i=0;
+$r1i=0;
+$r1o=0;
+$r2i=0;
+$r2o=0;
 $chart_labels = "labels: [";
-while($row=mysqli_fetch_array($result))
-{
+while($row=mysqli_fetch_array($result)){
   $i++;
   $md_data[$row["sta_name"]][$row["sen_id"]] .= $row["md_messwert"].',';
-  if ((round(strtotime($row["md_timestamp"])/600)*600) != $old_timestamp)
-  {
+  if ((round(strtotime($row["md_timestamp"])/600)*600) != $old_timestamp){
     $chart_labels .= "'".date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600)."',";
   }
-
-    $old_timestamp = round(strtotime($row["md_timestamp"])/600)*600;
+  $old_timestamp = round(strtotime($row["md_timestamp"])/600)*600;
 }
 $chart_labels = rtrim($chart_labels, ',');
 $chart_labels .= "]";
@@ -28,10 +29,8 @@ $chart_data = "datasets: [";
 $r = 0;
 $g = 150;
 $b = 100;
-foreach ($md_data as $sta_name => $sen_id)
-{
-  foreach ($sen_id as $key => $value)
-  {
+foreach ($md_data as $sta_name => $sen_id){
+  foreach ($sen_id as $key => $value){
     $color = $r.','.$g.','.$b;
     $chart_data .= '{label: "'.$key.'",';
     $chart_data .= 'fillColor: "rgba('.$color.', 0.2)",';
@@ -41,6 +40,18 @@ foreach ($md_data as $sta_name => $sen_id)
     $chart_data .= 'pointHighlightFill: "#fff",';
     $chart_data .= 'pointHighlightStroke: "rgba('.$color.',1)",';
     $chart_data .= 'data: ['.rtrim($value,',').']},';
+    if(sen_id==1){
+        $r1i=$r1i+$value;
+    }
+    elseif(sen_id==2){
+        # code...
+    }
+    elseif(sen_id==3){
+        # code...
+    }
+    elseif(sen_id==4){
+        # code...
+    }
     $r = $r+10;
     $b = $b+60;
     if ($r > 250) $r = 50;
@@ -116,7 +127,7 @@ $chart_data .= "]";
                                         }
                                     </style>
                                     <h5>Room 1 IN</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r1i" tabindex="0">
                                 </div>
                                 <div class="slider-room1out">
                                     <style>
@@ -127,7 +138,7 @@ $chart_data .= "]";
                                         }
                                     </style>
                                     <h5>Room 1 OUT</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r1o" tabindex="0">
                                 </div>
                             </div>
                             <div class="room2">
@@ -140,7 +151,7 @@ $chart_data .= "]";
                                         }
                                     </style>
                                     <h5>Room 2 IN</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r2i" tabindex="0">
                                 </div>
                                 <div class="slider-room2out">
                                     <style>
@@ -151,7 +162,7 @@ $chart_data .= "]";
                                         }
                                     </style>
                                     <h5>Room 2 OUT</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r2o" tabindex="0">
                                 </div>
                             </div>
                         </div>
