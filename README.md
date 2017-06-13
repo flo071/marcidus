@@ -1,7 +1,6 @@
-# Marcidus 1.0 Beta
+# Marcidus 
 
-Broker:
+Final Version with graph.html
 
-192.168.16.97
 
-Port: 1883
+Beta Version with control methods in graph.php
