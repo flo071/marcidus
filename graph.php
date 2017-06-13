@@ -1,205 +1,46 @@
 <!DOCTYPE html>
-<?php
-$link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
-mysqli_set_charset($link,"utf8");
-$sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
-  FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
-  WHERE md_sen_id_fk = sen_id
-  AND sta_id = sen_sta_id_fk
-  AND mk_id = md_mk_id_fk
-  ORDER BY md_timestamp";
-$result = mysqli_query($link,$sql);
-$i=0;
-$r1i=0;
-$r1o=0;
-$r2i=0;
-$r2o=0;
-$chart_labels = "labels: [";
-while($row=mysqli_fetch_array($result)){
-  $i++;
-  $md_data[$row["sta_name"]][$row["sen_id"]] .= $row["md_messwert"].',';
-  if ((round(strtotime($row["md_timestamp"])/600)*600) != $old_timestamp){
-    $chart_labels .= "'".date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600)."',";
-  }
-  $old_timestamp = round(strtotime($row["md_timestamp"])/600)*600;
-}
-$chart_labels = rtrim($chart_labels, ',');
-$chart_labels .= "]";
-$chart_data = "datasets: [";
-$r = 0;
-$g = 150;
-$b = 100;
-foreach ($md_data as $sta_name => $sen_id){
-  foreach ($sen_id as $key => $value){
-    $color = $r.','.$g.','.$b;
-    $chart_data .= '{label: "'.$key.'",';
-    $chart_data .= 'fillColor: "rgba('.$color.', 0.2)",';
-    $chart_data .= 'strokeColor: "rgb('.$color.')",';
-    $chart_data .= 'pointColor: "rgba('.$color.',1)",';
-    $chart_data .= 'pointStrokeColor: "#fff",';
-    $chart_data .= 'pointHighlightFill: "#fff",';
-    $chart_data .= 'pointHighlightStroke: "rgba('.$color.',1)",';
-    $chart_data .= 'data: ['.rtrim($value,',').']},';
-    if(sen_id==1){
-        $r1i=$r1i+$value;
-    }
-    elseif(sen_id==2){
-        # code...
-    }
-    elseif(sen_id==3){
-        # code...
-    }
-    elseif(sen_id==4){
-        # code...
-    }
-    $r = $r+10;
-    $b = $b+60;
-    if ($r > 250) $r = 50;
-    if ($g > 250) $g = 150;
-    if ($b > 250) $b = 0;
-  }
-}
-$chart_data = rtrim($chart_data, ',');
-$chart_data .= "]";
-?>
-    <head>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="stylesheet" href="material.css">
-        <script defer src="material.js"></script>
-        <title>Humidity Graph</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8" />
-        <script src="Chart.js"></script>
-        <link href="icons.css" rel="stylesheet">
-    </head>
-    <body onload="displayLineChart();">
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-          mdl-layout--fixed-header">
-            <header class="mdl-layout__header">
-                <div class="mdl-layout__header-row">
-                    <div class="mdl-layout-spacer"></div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-                        <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
-                            <i class="material-icons">search</i>
-                        </label>
-                        <div class="mdl-textfield__expandable-holder">
-                            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
-                        </div>
-                    </div>
-                </div>
-            </header>
-        <div class="mdl-layout__drawer">
-            <a class="mdl-layout-title" href="index.html"><img src="favicon.ico" alt="Icon" width="25" height="25">Marcidus</a>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="hardware.html">Hardware &amp; Software</a>
-                <a class="mdl-navigation__link" href="graph.php">Humidity Graph</a>
-                <a class="mdl-navigation__link" href="create.html">Creators</a>
-                <a class="mdl-navigation__link" href="Marcidus.apk">Download App</a>
-                <hr>
-                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus" target="_blank">Github Repo (Website)</a>
-                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus_app" target="_blank">Github Repo (App)</a>
-            </nav>
-        </div>
-        <main class="mdl-layout__content">
-            <div class="page-content">
-                    <center>
-                    <div class="box">
-                        <canvas id="lineChart" height="250" width="500"></canvas></div>
-                    <script language="JavaScript">
-                        function displayLineChart() {
-                            var data = {
-                                <?php echo $chart_labels; ?>,
-                                <?php echo $chart_data; ?>
-                            };
-                            var ctx = document.getElementById("lineChart").getContext("2d");
-                            var options = {};
-                            var lineChart = new Chart(ctx).Line(data, options);
-                        }
-                        </script>       
-                        <div class="adjustments">
-                            <div class="room1">
-                                <div class="slider-room1in">
-                                    <style>
-                                        .slider-room1in {
-                                        width: 30vw;
-                                        max-width: 360px;
-                                        display: inline-block;
-                                        }
-                                    </style>
-                                    <h5>Room 1 IN</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r1i" tabindex="0">
-                                </div>
-                                <div class="slider-room1out">
-                                    <style>
-                                        .slider-room1out {
-                                        width: 30vw;
-                                        max-width: 360px;
-                                        display: inline-block;
-                                        }
-                                    </style>
-                                    <h5>Room 1 OUT</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r1o" tabindex="0">
-                                </div>
-                            </div>
-                            <div class="room2">
-                                <div class="slider-room2in">
-                                    <style>
-                                        .slider-room2in {
-                                        width: 30vw;
-                                        max-width: 360px;
-                                        display: inline-block;
-                                        }
-                                    </style>
-                                    <h5>Room 2 IN</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r2i" tabindex="0">
-                                </div>
-                                <div class="slider-room2out">
-                                    <style>
-                                        .slider-room2out {
-                                        width: 30vw;
-                                        max-width: 360px;
-                                        display: inline-block;
-                                        }
-                                    </style>
-                                    <h5>Room 2 OUT</h5>
-                                    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="$r2o" tabindex="0">
-                                </div>
-                            </div>
-                        </div>
-                        <br>    
-                        <div class="list">
-                            <table border="1">
-                                <tr>
-                                    <td><center>Time</center></td>
-                                    <td><center>Location</center></td>
-                                    <td><center>Value</center></td>
-                                    <td><center>Unit</center></td>
-                                </tr>
-                                <?php
-                                    $link= mysqli_connect("localhost","root","mysql","Luftfeuchtigkeit");
-                                    mysqli_set_charset($link,"utf8");
-                                    $sql = "SELECT sta_name, sen_id, mk_einheit, md_messwert, md_timestamp
-                                              FROM tbl_standort, tbl_messkat, tbl_sensoren, tbl_messdaten
-                                             WHERE md_sen_id_fk = sen_id
-                                               AND sta_id = sen_sta_id_fk
-                                               AND mk_id = md_mk_id_fk";
-                                    $result = mysqli_query($link,$sql);
-                                    while($row=mysqli_fetch_array($result))
-                  		              {
-                                        echo "<tr>";
-                                        echo "<td>";
-                                        echo date('Y-m-d H:i', round(strtotime($row["md_timestamp"])/600)*600);
-                                        echo "</td>";
-                                        echo "<td>".$row["sta_name"]."</td>";
-                                        echo "<td>".$row["md_messwert"]."</td>";
-                                        echo "<td>".$row["mk_einheit"]."</td>";
-                                        echo "</tr>";
-                  		              }
-                                ?>
-                            </table>
-                        </div>
-                    </center>
-                </div>
-            </main>
-        </div>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Graphs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Chart.js"></script>
+    <script language="JavaScript">
+        function displayLineChart() {
+            var data = {
+                labels: [1, 2, 3, 4, 5, 6, 7],
+                datasets: [{
+                        label: "Inside",
+                        fillColor: "rgba(124,220,220,0.2)",
+                        strokeColor: "rgba(124,220,220,1)",
+                        pointColor: "rgba(124,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(124,220,220,1)",
+                        data: [17, 23, 75, 32, 65, 5, 100]
+                    },
+                    {
+                          label: "Outside",
+                          fillColor: "rgba(124,220,220,0.2)",
+                          strokeColor: "rgba(124,124,220,1)",
+                          pointColor: "rgba(124,124,220,1)",
+                          pointStrokeColor: "#fff",
+                          pointHighlightFill: "#fff",
+                          pointHighlightStroke: "rgba(124,124,220,1)",
+                          data: [100, 5, 65, 32, 75, 23, 17]
+                      }
+                ]
+            };
+            var ctx = document.getElementById("lineChart").getContext("2d");
+            var options = {};
+            var lineChart = new Chart(ctx).Line(data, options);
+        }
+    </script>
+</head>
+
+<body onload="displayLineChart();">
+  <center>
+    <div class="box">
+        <canvas id="lineChart" height="450" width="800"></canvas></div>
+  </center>
+</body>
