@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="material.css">
+    <script defer src="material.js"></script>
+    <title>Marcidus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link href="icons.css" rel="stylesheet">
     <title>Graphs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="Chart.js"></script>
@@ -39,8 +44,43 @@
 </head>
 
 <body onload="displayLineChart();">
-  <center>
-    <div class="box">
-        <canvas id="lineChart" height="450" width="800"></canvas></div>
-  </center>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+          mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+        <i class="material-icons">search</i>
+      </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <a class="mdl-layout-title" href="index.html"><img src="favicon.ico" alt="Icon" width="25" height="25">Marcidus</a>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="hardware.html">Hardware &amp; Software</a>
+                <a class="mdl-navigation__link" href="graph.html">Humidity Graph</a>
+                <a class="mdl-navigation__link" href="create.html">Creators</a>
+                <a class="mdl-navigation__link" href="Marcidus.apk">Download App</a>
+  				<hr>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus" target="_blank">Github Repo (Website)</a>
+                <a class="mdl-navigation__link" href="https://github.com/flo071/marcidus_app" target="_blank">Github Repo (App)</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <center>
+                    <div class="box">
+                        <canvas id="lineChart" height="450" width="800"></canvas></div>
+                </center>
+            </div>
+        </main>
+    </div>
 </body>
+
+
